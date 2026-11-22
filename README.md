@@ -26,20 +26,6 @@ A personal portfolio showcasing my work in software engineering, quantitative de
 - Lenis
 - Three.js
 
-## Development
-
-```bash
-npm install
-npm run dev
-```
-
-## Production Build
-
-```bash
-npm run build
-npm run preview
-```
-
 ## Contact
 
 - Email: [chat@rudrathacker.site](mailto:chat@rudrathacker.site)
