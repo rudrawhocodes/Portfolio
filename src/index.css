@@ -1,0 +1,375 @@
+/* ============================================
+   PORTFOLIO - Extraordinary Creative Design
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Colors - Deep Black Aesthetic */
+  --color-bg: #000000;
+  --color-bg-alt: #030303;
+  --color-bg-secondary: #000000;
+  --color-surface: #080808;
+  --color-surface-light: #0f0f0f;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-text: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.55);
+  --color-text-muted: rgba(255, 255, 255, 0.35);
+  --color-accent: #00ff88;
+  --color-accent-secondary: #00ff88;
+  --color-accent-tertiary: #ff6b35;
+  --color-gradient-1: #00ff88;
+  --color-gradient-2: #00ff88;
+  --color-gradient-3: #00ff88;
+  
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+  
+  /* Animations */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+:root[data-theme='light'] {
+  --color-bg: #f4f7f5;
+  --color-bg-alt: #edf2ef;
+  --color-bg-secondary: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-light: #f8faf9;
+  --color-border: rgba(15, 23, 42, 0.12);
+  --color-text: #111827;
+  --color-text-secondary: #111827;
+  --color-text-muted: #111827;
+  --color-accent: #008f57;
+  --color-accent-secondary: #008f57;
+  --color-accent-tertiary: #c44c22;
+  --color-gradient-1: #008f57;
+  --color-gradient-2: #008f57;
+  --color-gradient-3: #008f57;
+  color-scheme: light;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: none;
+}
+
+button {
+  cursor: none;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Utility Classes */
+.gradient-text {
+  color: var(--color-accent);
+}
+
+.accent-text {
+  color: var(--color-accent);
+}
+
+/* Noise Overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Grid Lines Background */
+.grid-background {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 100px 100px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Light theme */
+:root[data-theme='light'] .grid-background {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+}
+
+:root[data-theme='light'] .noise-overlay {
+  opacity: 0.015;
+  filter: invert(1);
+}
+
+:root[data-theme='light'] .navigation {
+  background: rgba(244, 247, 245, 0.82) !important;
+  border-bottom-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+:root[data-theme='light'] .mobile-menu {
+  background: var(--color-bg);
+}
+
+:root[data-theme='light'] .about,
+:root[data-theme='light'] .projects,
+:root[data-theme='light'] .skills,
+:root[data-theme='light'] .experience,
+:root[data-theme='light'] .education,
+:root[data-theme='light'] .contact {
+  background-color: var(--color-bg);
+}
+
+:root[data-theme='light'] .edu-card,
+:root[data-theme='light'] .skill-category,
+:root[data-theme='light'] .project-card,
+:root[data-theme='light'] .experience-card,
+:root[data-theme='light'] .contact-card,
+:root[data-theme='light'] .contact-form,
+:root[data-theme='light'] .about-card,
+:root[data-theme='light'] .terminal-window,
+:root[data-theme='light'] .stat-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f8faf9 100%);
+  border-color: rgba(15, 23, 42, 0.1);
+  box-shadow:
+    0 0 0 1px rgba(15, 23, 42, 0.025),
+    0 12px 32px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+:root[data-theme='light'] .edu-coursework,
+:root[data-theme='light'] .skill-category-header,
+:root[data-theme='light'] .project-footer,
+:root[data-theme='light'] .experience-header,
+:root[data-theme='light'] .contact-footer,
+:root[data-theme='light'] .about-terminal-header {
+  background: rgba(237, 242, 239, 0.72);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+:root[data-theme='light'] .edu-stat,
+:root[data-theme='light'] .skill-category-header,
+:root[data-theme='light'] .experience-card,
+:root[data-theme='light'] .project-footer,
+:root[data-theme='light'] .contact-footer {
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+:root[data-theme='light'] .about-image-placeholder,
+:root[data-theme='light'] .skills-panel,
+:root[data-theme='light'] .project-card,
+:root[data-theme='light'] .experience-card,
+:root[data-theme='light'] .edu-card,
+:root[data-theme='light'] .contact-link-item,
+:root[data-theme='light'] .footer {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.10);
+  box-shadow:
+    0 0 0 1px rgba(15, 23, 42, 0.025),
+    0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
+:root[data-theme='light'] .code-header,
+:root[data-theme='light'] .project-metrics,
+:root[data-theme='light'] .footer {
+  background: rgba(237, 242, 239, 0.72);
+  border-color: rgba(15, 23, 42, 0.10);
+}
+
+:root[data-theme='light'] .edu-coursework,
+:root[data-theme='light'] .panel-header {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.10);
+}
+
+:root[data-theme='light'] .edu-stats {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.10);
+}
+
+:root[data-theme='light'] .exp-highlights {
+  background: transparent;
+  border-color: rgba(15, 23, 42, 0.10);
+}
+
+:root[data-theme='light'] .skill-category-btn {
+  color: var(--color-text-secondary);
+}
+
+:root[data-theme='light'] .skill-category-btn:hover,
+:root[data-theme='light'] .skill-category-btn.active {
+  color: var(--color-text);
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+:root[data-theme='light'] .category-count,
+:root[data-theme='light'] .skill-bar-container,
+:root[data-theme='light'] .view-all-link {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+:root[data-theme='light'] .project-title,
+:root[data-theme='light'] .project-description,
+:root[data-theme='light'] .project-tech p,
+:root[data-theme='light'] .project-link,
+:root[data-theme='light'] .projects-placeholder,
+:root[data-theme='light'] .projects-coming-soon,
+:root[data-theme='light'] .metric-label,
+:root[data-theme='light'] .contact-description,
+:root[data-theme='light'] .course-name,
+:root[data-theme='light'] .project-category,
+:root[data-theme='light'] .tag,
+:root[data-theme='light'] .skill-category-btn,
+:root[data-theme='light'] .code-content,
+:root[data-theme='light'] .coursework-title,
+:root[data-theme='light'] .edu-university,
+:root[data-theme='light'] .edu-location,
+:root[data-theme='light'] .period-value,
+:root[data-theme='light'] .period-label,
+:root[data-theme='light'] .stat-label,
+:root[data-theme='light'] .exp-period,
+:root[data-theme='light'] .exp-location,
+:root[data-theme='light'] .exp-description p,
+:root[data-theme='light'] .highlight-label,
+:root[data-theme='light'] .link-label,
+:root[data-theme='light'] .link-value,
+:root[data-theme='light'] .footer-text,
+:root[data-theme='light'] .footer-copy {
+  color: #111827;
+}
+
+:root[data-theme='light'] .project-category,
+:root[data-theme='light'] .tag,
+:root[data-theme='light'] .view-all-link {
+  box-shadow: none;
+  text-shadow: none;
+}
+
+:root[data-theme='light'] .tag {
+  background: #f1f5f2;
+  border-color: rgba(15, 23, 42, 0.10);
+}
+
+:root[data-theme='light'] .project-card:hover .tag {
+  background: #e8eeea;
+  border-color: rgba(15, 23, 42, 0.16);
+}
+
+:root[data-theme='light'] .project-card::after,
+:root[data-theme='light'] .project-card:hover {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.018) 0%, transparent 50%);
+  border-color: rgba(0, 143, 87, 0.22);
+}
+
+:root[data-theme='light'] .contact-link-item:hover {
+  background: #f8faf9;
+  border-color: rgba(0, 143, 87, 0.28);
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.10),
+    0 0 30px -10px rgba(0, 143, 87, 0.18);
+}
+
+:root[data-theme='light'] .cta-secondary,
+:root[data-theme='light'] .skill-category-btn,
+:root[data-theme='light'] .tag,
+:root[data-theme='light'] .view-all-link {
+  box-shadow: none;
+}
+
+:root[data-theme='light'] .edu-stat:hover,
+:root[data-theme='light'] .course-item:hover {
+  background: rgba(0, 143, 87, 0.055);
+}
+
