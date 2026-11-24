@@ -77,7 +77,7 @@ const Education = () => {
     <section id="education" ref={sectionRef} className="education section">
       <div className="section-inner">
         <div className="section-header">
-          <span className="section-label">05 — Education</span>
+          <span className="section-label">06 — Education</span>
           <h2 className="section-title">
             Academic <span className="gradient-text">Foundation</span>
           </h2>

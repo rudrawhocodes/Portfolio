@@ -186,7 +186,7 @@ const Projects = () => {
                 ))}
               </div>
 
-              {project.link && (
+              {project.link ? (
                 <a
                   href={project.link}
                   target="_blank"
@@ -200,6 +200,10 @@ const Projects = () => {
                     <line x1="10" y1="14" x2="21" y2="3"/>
                   </svg>
                 </a>
+              ) : (
+                <span className="project-link project-link--soon">
+                  Deploying Soon
+                </span>
               )}
             </motion.article>
           ))}

@@ -93,7 +93,7 @@ const Experience = () => {
     <section id="experience" ref={sectionRef} className="experience section">
       <div className="section-inner">
         <div className="section-header">
-          <span className="section-label">04 — Experience</span>
+          <span className="section-label">05 — Experience</span>
           <h2 className="section-title">
             Building <span className="gradient-text">Communities</span>
           </h2>

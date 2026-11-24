@@ -24,6 +24,7 @@ const Navigation = ({ theme, onThemeToggle }) => {
   const navLinks = [
     { id: 'about', label: 'About' },
     { id: 'projects', label: 'Work' },
+    { id: 'building', label: 'Startup' },
     { id: 'skills', label: 'Skills' },
     { id: 'experience', label: 'Experience' },
     { id: 'education', label: 'Education' },

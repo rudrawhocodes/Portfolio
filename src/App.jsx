@@ -10,6 +10,7 @@ import ParticleBackground from './components/ParticleBackground';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
+import Building from './components/Building';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Education from './components/Education';
@@ -101,6 +102,7 @@ function App() {
         <Hero />
         <About />
         <Projects />
+        <Building />
         <Skills />
         <Experience />
         <Education />

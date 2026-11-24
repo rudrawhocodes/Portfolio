@@ -1,0 +1,7 @@
+.building {
+  background: var(--color-bg);
+}
+
+.building-gradient-text {
+  color: var(--color-accent);
+}

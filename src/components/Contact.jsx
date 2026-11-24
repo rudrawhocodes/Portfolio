@@ -91,7 +91,7 @@ const Contact = () => {
       <div className="section-inner">
         <div className="contact-content">
           <div className="section-header">
-            <span className="section-label">06 — Contact</span>
+            <span className="section-label">07 — Contact</span>
           </div>
 
           <div className="contact-title-wrapper">
